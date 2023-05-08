@@ -2,17 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 
 
-export const AddContact = () => {
+export const EditContact = () => {
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
     const [direccion, setDireccion] = useState("");
-  
+
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log(nombre, email, telefono, direccion);
-         fetch("https://assets.breatheco.de/apis/fake/contact/", {
-          method: "POST",
+         fetch(`https://assets.breatheco.de/apis/fake/contact/${contact.id}`, {
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
