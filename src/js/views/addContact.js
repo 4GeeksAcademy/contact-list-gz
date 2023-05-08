@@ -7,7 +7,6 @@ export const AddContact = () => {
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
     const [direccion, setDireccion] = useState("");
-  
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log(nombre, email, telefono, direccion);
@@ -27,7 +26,11 @@ export const AddContact = () => {
           .then((response) => response.json())
           .then((data) => console.log(data))
           .catch((error) => console.log("error", error));
-  };
+          setNombre("");
+          setEmail("");
+          setTelefono("");
+          setDireccion("");
+          };
   
     return (
       <form onSubmit={handleSubmit}>

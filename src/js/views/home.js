@@ -57,6 +57,9 @@ const handleDelete = (contact) =>{
 							<p className="card-text">
 								<strong>Email:</strong> {contact.email}
 							</p>
+							<p className="card-text">
+								<strong>Address:</strong> {contact.address}
+							</p>
 							<Link to={`/editContact/${contact.id}`}>
 							<button href="#" className="btn btn-secondary me-2">
 								Edit
